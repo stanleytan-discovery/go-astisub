@@ -43,9 +43,9 @@ func TestTTML(t *testing.T) {
 	assert.EqualError(t, err, astisub.ErrNoSubtitlesToWrite.Error())
 
 	// Write
-	c, err := ioutil.ReadFile("./testdata/example-out.ttml")
+	c, err := ioutil.ReadFile("./testdata/example-out.vtt")
 	assert.NoError(t, err)
-	err = s.WriteToTTML(w)
+	err = s.WriteToWebVTT(w)
 	assert.NoError(t, err)
 	assert.Equal(t, string(c), w.String())
 }

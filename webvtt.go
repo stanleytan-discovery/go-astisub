@@ -342,32 +342,34 @@ func (s Subtitles) WriteToWebVTT(o io.Writer) (err error) {
 		c = append(c, []byte(formatDurationWebVTT(item.EndAt))...)
 
 		// Add styles
-		if item.InlineStyle != nil {
-			if item.InlineStyle.WebVTTAlign != "" {
-				c = append(c, bytesSpace...)
-				c = append(c, []byte("align:"+item.InlineStyle.WebVTTAlign)...)
+		/*
+			if item.InlineStyle != nil {
+				if item.InlineStyle.WebVTTAlign != "" {
+					c = append(c, bytesSpace...)
+					c = append(c, []byte("align:"+item.InlineStyle.WebVTTAlign)...)
+				}
+				if item.InlineStyle.WebVTTLine != "" {
+					c = append(c, bytesSpace...)
+					c = append(c, []byte("line:"+item.InlineStyle.WebVTTLine)...)
+				}
+				if item.InlineStyle.WebVTTPosition != "" {
+					c = append(c, bytesSpace...)
+					c = append(c, []byte("position:"+item.InlineStyle.WebVTTPosition)...)
+				}
+				if item.Region != nil {
+					c = append(c, bytesSpace...)
+					c = append(c, []byte("region:"+item.Region.ID)...)
+				}
+				if item.InlineStyle.WebVTTSize != "" {
+					c = append(c, bytesSpace...)
+					c = append(c, []byte("size:"+item.InlineStyle.WebVTTSize)...)
+				}
+				if item.InlineStyle.WebVTTVertical != "" {
+					c = append(c, bytesSpace...)
+					c = append(c, []byte("vertical:"+item.InlineStyle.WebVTTVertical)...)
+				}
 			}
-			if item.InlineStyle.WebVTTLine != "" {
-				c = append(c, bytesSpace...)
-				c = append(c, []byte("line:"+item.InlineStyle.WebVTTLine)...)
-			}
-			if item.InlineStyle.WebVTTPosition != "" {
-				c = append(c, bytesSpace...)
-				c = append(c, []byte("position:"+item.InlineStyle.WebVTTPosition)...)
-			}
-			if item.Region != nil {
-				c = append(c, bytesSpace...)
-				c = append(c, []byte("region:"+item.Region.ID)...)
-			}
-			if item.InlineStyle.WebVTTSize != "" {
-				c = append(c, bytesSpace...)
-				c = append(c, []byte("size:"+item.InlineStyle.WebVTTSize)...)
-			}
-			if item.InlineStyle.WebVTTVertical != "" {
-				c = append(c, bytesSpace...)
-				c = append(c, []byte("vertical:"+item.InlineStyle.WebVTTVertical)...)
-			}
-		}
+		*/
 
 		// Add new line
 		c = append(c, bytesLineSeparator...)
